@@ -95,7 +95,7 @@ const ScrollToTopButton = styled(BaseButton)`
   }
 
   &:hover {
-    background-color: #d4006a;
+    background-color: #FF595B;
   }
 `;
 
