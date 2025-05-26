@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/* Previne scroll horizontal */
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 100vw;
+}
+
+/* Hero principal com parallax (desktop) */
+.bg-loupit-hero {
+  position: relative;
+  z-index: 0;
+  height: auto;
+  min-height: 600px;
+  overflow: hidden;
+
+  background-image: url('/background-new-loupit.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Conteúdo acima do fundo */
+.bg-loupit-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Overlay preto apenas no mobile */
+@media (max-width: 768px) {
+  .bg-loupit-hero {
+    background-attachment: scroll;
+    background-position: 35%;
+  }
+
+  .bg-loupit-hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+    pointer-events: none;
+  }
+}
+
+/* Safari iOS também desativa o parallax */
+@supports (-webkit-touch-callout: none) {
+  .bg-loupit-hero {
+    background-attachment: scroll;
+  }
+}
+
+/* Seção secundária sem overlay */
+.bg-segunda-parte {
+  position: relative;
+  z-index: 0;
+  height: auto;
+  min-height: 600px;
+  overflow: hidden;
+
+  background-image: url('/loupit-background-segunda-parte.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: black;
+}
+
+.bg-segunda-parte > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile desativa parallax */
+@media (max-width: 768px) {
+  .bg-segunda-parte {
+    background-attachment: scroll;
+    background-position: 35%;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .bg-segunda-parte {
+    background-attachment: scroll;
+  }
+}
+
+/* Animações opcionais */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+.typing {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #fff;
+  width: 0;
+  animation: typing 3s steps(40, end) forwards, blink 0.75s step-end infinite;
+}

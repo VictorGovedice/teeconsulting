@@ -1,0 +1,22 @@
+.clients-track {
+  display: flex;
+  width: max-content;
+  animation: scrollLeft 40s linear infinite;
+}
+
+.client-logo {
+  flex: 0 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
