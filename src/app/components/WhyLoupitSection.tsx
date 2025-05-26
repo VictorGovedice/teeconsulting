@@ -1,12 +1,6 @@
 'use client';
 
 import {
-  FaMoneyBillWave,
-  FaGlobeAmericas,
-  FaClock,
-  FaCogs,
-  FaPuzzlePiece,
-  FaBolt,
   FaChartLine,
   FaSyncAlt,
   FaLightbulb
@@ -14,15 +8,6 @@ import {
 import { motion } from 'framer-motion';
 
 export default function WhyLoupitSection() {
-  const benefits = [
-    { icon: <FaMoneyBillWave className="text-2xl text-[#EC2224]" />, text: 'Economia de até 40%' },
-    { icon: <FaGlobeAmericas className="text-2xl text-[#EC2224]" />, text: 'Presença global em +60 países' },
-    { icon: <FaClock className="text-2xl text-[#EC2224]" />, text: 'Atendimento bilíngue 24h' },
-    { icon: <FaCogs className="text-2xl text-[#EC2224]" />, text: 'Sistema multimoeda e multilíngue' },
-    { icon: <FaPuzzlePiece className="text-2xl text-[#EC2224]" />, text: 'Ferramenta única e integrada' },
-    { icon: <FaBolt className="text-2xl text-[#EC2224]" />, text: 'SLA de 60 minutos para serviços offline' },
-  ];
-
   const integrationFeatures = [
     { 
       icon: <FaChartLine className="text-4xl text-[#EC2224]" />,

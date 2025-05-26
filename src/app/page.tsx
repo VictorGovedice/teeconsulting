@@ -26,7 +26,7 @@ export default function Home() {
     "Consultoria de certificado digital"
   ];
   const [typingText, setTypingText] = useState('');
-  const [typingIndex, setTypingIndex] = useState(0);
+  const [typingIndex] = useState(0);
   const [lineIndex, setLineIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -172,12 +172,12 @@ export default function Home() {
             ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}
           `}>
             <div className={`
-              absolute right-0 top-0 h-full w-64 bg-gray-900 shadow-lg p-6
+              absolute right-0 top-0 h-full w-64 bg-[#EC2224] shadow-lg p-6
               transform transition-transform duration-300 ease-in-out
               ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}
             `}>
               <button 
-                className="absolute top-4 right-4 text-white hover:text-[#EC2224] transition-colors duration-300"
+                className="absolute top-4 right-4 text-white hover:text-black transition-colors duration-300"
                 onClick={toggleMobileMenu}
                 aria-label="Fechar menu"
               >
@@ -193,90 +193,50 @@ export default function Home() {
                     e.preventDefault();
                     scrollToSection('platform');
                   }}
-                  className="hover:text-[#EC2224] transition-colors duration-300 py-2"
+                  className="hover:text-black transition-colors duration-300 py-2"
                 >
                   Certificados
                 </a>
                 <a 
-                href="#clients" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('clients');
-                }}
-                className="hover:text-[#EC2224] transition-colors duration-300"
-              >
-                Clientes
-              </a>
-              <a 
-                href="#global" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('global');
-                }}
-                className="hover:text-[#EC2224] transition-colors duration-300"
-              >
-                Presença global
-              </a>
-              <a 
-                href="#hotel" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('hotel');
-                }}
-                className="hover:text-[#EC2224] transition-colors duration-300"
-              >
-                Hospedagem
-              </a>
-              <a 
-                href="#travel" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('travel');
-                }}
-                className="hover:text-[#EC2224] transition-colors duration-300"
-              >
-                Benefícios da certificação
-              </a>
-              <a 
-                href="#expense" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('expense');
-                }}
-                className="hover:text-[#EC2224] transition-colors duration-300"
-              >
-                Consultoria especializada
-              </a>
-              <a 
-                href="#integration" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('integration');
-                }}
-                className="hover:text-[#EC2224] transition-colors duration-300"
-              >
-                Integração
-              </a>
-              <a 
-                href="#why" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('why');
-                }}
-                className="hover:text-[#EC2224] transition-colors duration-300"
-              >
-                Porque loupit??
-              </a>
-              <a 
-                href="#contact" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('contact');
-                }}
-                className="hover:text-[#EC2224] transition-colors duration-300"
-              >
-                Contato
-              </a>
+                  href="#travel" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('travel');
+                  }}
+                  className="hover:text-black transition-colors duration-300 py-2"
+                >
+                  Benefícios da certificação
+                </a>
+                <a 
+                  href="#expense" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('expense');
+                  }}
+                  className="hover:text-black transition-colors duration-300 py-2"
+                >
+                  Consultoria especializada
+                </a>
+                <a 
+                  href="#integration" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('integration');
+                  }}
+                  className="hover:text-black transition-colors duration-300 py-2"
+                >
+                  Integração
+                </a>
+                <a 
+                  href="#contact" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('contact');
+                  }}
+                  className="hover:text-black transition-colors duration-300 py-2"
+                >
+                  Contato
+                </a>
               </nav>
             </div>
           </div>

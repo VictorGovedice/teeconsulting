@@ -1,6 +1,32 @@
 'use client';
 
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+
+interface CounterProps {
+  target: number;
+  duration?: number;
+}
+
+function Counter({ target, duration = 2000 }: CounterProps) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const end = target;
+    const incrementTime = duration / end;
+    
+    const timer = setInterval(() => {
+      start += 1;
+      setCount(start);
+      if (start >= end) clearInterval(timer);
+    }, incrementTime);
+
+    return () => clearInterval(timer);
+  }, [target, duration]);
+
+  return <>{count}%</>;
+}
 
 export default function BenefitsResultsSection() {
   return (
@@ -27,28 +53,36 @@ export default function BenefitsResultsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Item 1 - Redução de Custos */}
           <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:transform hover:scale-105 transition-transform duration-300">
-            <div className="text-5xl font-bold text-[#EC2224] mb-4">35%</div>
+            <div className="text-5xl font-bold text-[#EC2224] mb-4">
+              <Counter target={35} />
+            </div>
             <h3 className="text-xl font-bold mb-2">Redução de Custos</h3>
             <p className="text-gray-600">Economia média após implementação.</p>
           </div>
 
           {/* Item 2 - Satisfação */}
           <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:transform hover:scale-105 transition-transform duration-300">
-            <div className="text-5xl font-bold text-[#EC2224] mb-4">90%</div>
+            <div className="text-5xl font-bold text-[#EC2224] mb-4">
+              <Counter target={90} />
+            </div>
             <h3 className="text-xl font-bold mb-2">Satisfação</h3>
             <p className="text-gray-600">Índice de aprovação entre clientes.</p>
           </div>
 
           {/* Item 3 - Ganho em Eficiência */}
           <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:transform hover:scale-105 transition-transform duration-300">
-            <div className="text-5xl font-bold text-[#EC2224] mb-4">45%</div>
+            <div className="text-5xl font-bold text-[#EC2224] mb-4">
+              <Counter target={45} />
+            </div>
             <h3 className="text-xl font-bold mb-2">Ganho em Eficiência</h3>
             <p className="text-gray-600">Otimização de processos corporativos.</p>
           </div>
 
           {/* Item 4 - Tempo Economizado */}
           <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:transform hover:scale-105 transition-transform duration-300">
-            <div className="text-5xl font-bold text-[#EC2224] mb-4">20%</div>
+            <div className="text-5xl font-bold text-[#EC2224] mb-4">
+              <Counter target={20} />
+            </div>
             <h3 className="text-xl font-bold mb-2">Tempo Economizado</h3>
             <p className="text-gray-600">Redução em horas de trabalho operacional.</p>
           </div>
