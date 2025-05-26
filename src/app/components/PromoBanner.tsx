@@ -54,24 +54,29 @@ export default function PromoBanner() {
 
   return (
     <div
-      className="fixed top-0 left-0 w-full z-50 bg-[#f20077] text-white shadow-md py-3 px-4 transition-all duration-500"
+      className="fixed top-0 left-0 w-full z-50 bg-[#EC2224] text-white shadow-md py-3 px-4 transition-all duration-500"
     >
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-4 text-base md:text-lg font-medium relative">
-        <a
-          href="https://wa.me/551120500244"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-white text-[#f20077] hover:bg-gray-100 transition-colors px-5 py-2 rounded-md text-sm md:text-base font-semibold"
-        >
-          Teste gratuito por 90 dias
-        </a>
-        <button
-          onClick={handleClose}
-          className="absolute right-4 text-white text-2xl hover:text-gray-300"
-          aria-label="Fechar banner"
-        >
-          &times;
-        </button>
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-base md:text-lg font-medium relative">
+        <div className="text-center md:text-left">
+          Faça seu certificado hoje, não perca
+        </div>
+        
+        <div className="flex items-center gap-4">
+          <a
+            href="#certificado" // Substitua pelo link real de ação
+            className="bg-white text-[#EC2224] hover:bg-gray-100 transition-colors px-5 py-2 rounded-md text-sm md:text-base font-semibold whitespace-nowrap"
+          >
+            FAZER AGORA MEU CERTIFICADO
+          </a>
+          
+          <button
+            onClick={handleClose}
+            className="text-white text-2xl hover:text-gray-300"
+            aria-label="Fechar banner"
+          >
+            &times;
+          </button>
+        </div>
       </div>
     </div>
   );

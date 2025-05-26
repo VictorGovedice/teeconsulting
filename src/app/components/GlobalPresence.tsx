@@ -2,39 +2,59 @@
 
 import Image from 'next/image';
 
-export default function GlobalPresence() {
+export default function AboutUs() {
   return (
-    <section className="bg-white py-20 px-6 w-full">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-          Presença global, expertise local
-        </h2>
+    <section className="bg-white py-24 px-6 w-full">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+        {/* Left side - Text content */}
+        <div className="md:w-1/2">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-12">
+            Quem Somos
+          </h2>
 
-        <p className="text-lg text-gray-600 mb-8">
-          Fazemos parte da aliança global Uniglobe Travel
-        </p>
+          <div className="space-y-12">
+            <div>
+              <h3 className="text-3xl font-semibold text-[#EC2224] mb-6">23 anos de mercado</h3>
+              <p className="text-xl text-gray-700 leading-relaxed">
+                Atuamos desde 2002 com foco exclusivo em processos viagens e eventos corporativos.
+              </p>
+            </div>
 
-        <div className="flex justify-center mb-8">
-          <Image 
-            src="/uniglobe-travel-loupit.png"
-            alt="Uniglobe Travel Logo"
-            width={160}
-            height={32}
-            className="object-contain h-8 md:h-8 w-auto"
-            priority
-          />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-2xl font-semibold text-[#EC2224] mb-4">+180 Empresas clientes</h4>
+                <p className="text-xl text-gray-700 leading-relaxed">
+                  Mais de 180 empresas atendidas com projetos de consultoria e auditoria.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="text-2xl font-semibold text-[#EC2224] mb-4">+200 Milhões economizados</h4>
+                <p className="text-xl text-gray-700 leading-relaxed">
+                  Nossos projetos proporcionaram economias milionárias para nossos clientes.
+                </p>
+              </div>
+            </div>
+
+            <div className="border-t border-gray-200 pt-8">
+              <h3 className="text-3xl font-semibold text-[#EC2224] mb-6">Equipe especializada</h3>
+              <p className="text-xl text-gray-700 leading-relaxed">
+                Consultores especializados com mais de 15 de experiência no mercado.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div className="text-base md:text-lg text-gray-700 space-y-6 text-left md:text-center">
-          <p>
-            Somos parte da aliança global Uniglobe, uma rede canadense presente em 90 países, 
-            atendendo clientes ao redor do mundo. Com faturamento anual superior a USD 5 bilhões 
-            e mais de 400 escritórios distribuídos pelo planeta, garantimos presença e expertise internacional.
-          </p>
-          <p>
-            Nosso ecossistema nos proporciona um alto poder de negociação com fornecedores, 
-            resultando em melhores preços e um suporte local totalmente integrado.
-          </p>
+        {/* Right side - Image */}
+        <div className="md:w-1/2">
+          <Image 
+            src="/imagem-lateral-teeconsulting.png"
+            alt="Equipe da TEE Consulting"
+            width={600}
+            height={600}
+            className="object-cover rounded-lg shadow-xl"
+            priority
+          />
         </div>
       </div>
     </section>

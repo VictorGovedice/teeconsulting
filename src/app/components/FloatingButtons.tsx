@@ -13,7 +13,7 @@ const FloatingButtons = () => {
   };
 
   const openWhatsApp = () => {
-    window.open(`https://wa.me/551120500244`, '_blank');
+    window.open(`https://wa.me/5511983669028`, '_blank');
   };
 
   useEffect(() => {
@@ -82,7 +82,7 @@ const BaseButton = styled.button`
 `;
 
 const ScrollToTopButton = styled(BaseButton)`
-  background-color: #F20077;
+  background-color: #EC2224;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeIn 0.3s ease forwards;

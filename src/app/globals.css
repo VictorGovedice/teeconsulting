@@ -23,9 +23,9 @@ body {
   min-height: 600px;
   overflow: hidden;
 
-  background-image: url('/background-new-loupit.png');
+  background-image: url('/teeconsulting-background.png');
   background-size: cover;
-  background-position: center;
+  background-position: top left;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -71,7 +71,7 @@ body {
   min-height: 600px;
   overflow: hidden;
 
-  background-image: url('/loupit-background-segunda-parte.png');
+  background-image: url('/teeconsunting-certificado.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

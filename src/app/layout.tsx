@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gestão de viagem corporativa",
-  description: "Criado por loupit",
+  title: "T&E Consulting certificado te consulting",
+  description: "Criado por T&E Consulting",
 };
 
 export default function RootLayout({

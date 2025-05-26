@@ -1,96 +1,154 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
+import { FaSearch, FaChartLine, FaOutdent, FaFileAlt, FaClipboardList, FaBoxOpen, FaHandshake, FaHeadset, FaCheckCircle, FaCalendarAlt } from 'react-icons/fa';
 
-export default function ExpenseSection() {
-  const [currentImage, setCurrentImage] = useState(0);
-  const images = [
-    '/img-1-loupit-expense.png',
-    '/img-2-loupit-expense.png',
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 25000); // 25 segundos
-
-    return () => clearInterval(interval);
-  }, [images.length]);
-
+export default function ConsultancySection() {
   return (
     <section
       className="w-full bg-cover bg-center bg-no-repeat bg-fixed text-white py-20 px-6"
-      style={{ backgroundImage: "url('/background-expense-loupit.png')" }}
+      style={{ backgroundImage: "url('/background-expense-teeconsulting.png')" }}
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
-        {/* Texto à esquerda */}
-        <div className="z-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            GESTÃO DE DESPESAS
+      <div className="max-w-4xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#FFFF' }}>
+            CONSULTORIA ESPECIALIZADA
           </h2>
-
-          <p className="text-lg text-gray-200 mb-8 max-w-xl">
-            A solução definitiva para empresas que buscam controle total e máxima
-            eficiência na gestão de despesas corporativas:
-          </p>
-
-          <ul className="space-y-4 text-base md:text-lg text-white">
-            <li className="flex items-start gap-2">
-              <span className="mt-1">•</span> <span>Política de despesas</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="mt-1">•</span> <span>Redução de fraude</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="mt-1">•</span>{' '}
-              <span>Conciliação automática de cartão de crédito de qualquer banco</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="mt-1">•</span> <span>Gestão de adiantamento</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="mt-1">•</span>{' '}
-              <span>Soluções de pagamento com cashback de 1,5%</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="mt-1">•</span> <span>Pagamentos por pix</span>
-            </li>
-          </ul>
+          <div className="w-20 h-1 mx-auto bg-white mb-6"></div>
         </div>
 
-        {/* Carrossel de imagens à direita */}
-        <div className="flex items-center justify-center">
-          <div className="relative w-full h-[600px] rounded-lg overflow-hidden shadow-2xl">
-            {images.map((image, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
-                  index === currentImage ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                }`}
-              >
-                <Image
-                  src={image}
-                  alt={`Demonstração de gestão de despesas ${index + 1}`}
-                  layout="fill"
-                  objectFit="contain"
-                  priority={index === 0}
-                />
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Service Item 1 */}
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:border-red-400 transition-all">
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-full" style={{ backgroundColor: '#EC2224' }}>
+                <FaSearch className="text-white text-xl" />
               </div>
-            ))}
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Diagnósticos Processuais</h3>
+                <p className="text-gray-200">Identificação precisa de gargalos operacionais.</p>
+              </div>
+            </div>
+          </div>
 
-            {/* Indicadores de slide */}
-            <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3">
-              {images.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentImage(index)}
-                  className={`w-4 h-4 rounded-full ${
-                    index === currentImage ? 'bg-white' : 'bg-white/50'
-                  }`}
-                  aria-label={`Ir para imagem ${index + 1}`}
-                />
-              ))}
+          {/* Service Item 2 */}
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:border-red-400 transition-all">
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-full" style={{ backgroundColor: '#EC2224' }}>
+                <FaChartLine className="text-white text-xl" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Atualização de Mercado</h3>
+                <p className="text-gray-200">Insights sobre tendências setoriais.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Service Item 3 */}
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:border-red-400 transition-all">
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-full" style={{ backgroundColor: '#EC2224' }}>
+                <FaOutdent className="text-white text-xl" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Serviços de Outsourcing</h3>
+                <p className="text-gray-200">• Benchmarking</p>
+                <p className="text-gray-200 ml-4">Comparativo com melhores práticas do mercado.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Service Item 4 */}
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:border-red-400 transition-all">
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-full" style={{ backgroundColor: '#EC2224' }}>
+                <FaFileAlt className="text-white text-xl" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Elaboração de Bids</h3>
+                <p className="text-gray-200">• Prozessos de Despesas</p>
+                <p className="text-gray-200 ml-4">Análise de fluxos financeiros.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Service Item 5 */}
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:border-red-400 transition-all">
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-full" style={{ backgroundColor: '#EC2224' }}>
+                <FaClipboardList className="text-white text-xl" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Criação de Políticas</h3>
+                <p className="text-gray-200">Desenvolvimento de procedimentos padronizados.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Service Item 6 */}
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:border-red-400 transition-all">
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-full" style={{ backgroundColor: '#EC2224' }}>
+                <FaBoxOpen className="text-white text-xl" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Implantação de Produtos</h3>
+                <p className="text-gray-200">Integração eficiente de novas soluções.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Service Item 7 */}
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:border-red-400 transition-all">
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-full" style={{ backgroundColor: '#EC2224' }}>
+                <FaHandshake className="text-white text-xl" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Negociação</h3>
+                <p className="text-gray-200">Otimização de contratos com fornecedores.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Service Item 8 */}
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:border-red-400 transition-all">
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-full" style={{ backgroundColor: '#EC2224' }}>
+                <FaHeadset className="text-white text-xl" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Suporte à Gestão</h3>
+                <p className="text-gray-200">Acompanhamento contínuo de resultados.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Service Item 9 */}
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:border-red-400 transition-all">
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-full" style={{ backgroundColor: '#EC2224' }}>
+                <FaCheckCircle className="text-white text-xl" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Auditoria Corporativa</h3>
+                <p className="text-gray-200">• Fornecedores e Sistemas</p>
+                <p className="text-gray-200 ml-4">Verificação de conformidade técnica.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Service Item 10 */}
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:border-red-400 transition-all">
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-full" style={{ backgroundColor: '#EC2224' }}>
+                <FaCalendarAlt className="text-white text-xl" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Eventos Corporativos</h3>
+                <p className="text-gray-200">Controle de investimentos em ações externas.</p>
+              </div>
             </div>
           </div>
         </div>

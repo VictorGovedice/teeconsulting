@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import './globals.css';
 import PlatformSection from '@/app/components/PlatformSection';
-import ClientsSlider from './components/ClientsSlider';
+//import ClientsSlider from './components/ClientsSlider';
 import GlobalPresence from './components/GlobalPresence';
 import HotelSection from './components/HotelSection';
 import TravelSection from './components/TravelSection';
@@ -16,16 +16,18 @@ import PromoBanner from './components/PromoBanner';
 import ScrollToTopButton from './components/FloatingButtons';
 
 export default function Home() {
-  const lines = [
-    { text: 'O FUTURO DA VIAGEM', isPink: true, isBold: true },
-    { text: 'CORPORATIVA CHEGOU', isPink: false, isBold: false }
-  ];
-
-  const [currentLineIndex, setCurrentLineIndex] = useState(0);
-  const [currentText, setCurrentText] = useState('');
-  const [displayedLines, setDisplayedLines] = useState<{text: string, isPink: boolean, isBold: boolean}[]>([]);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [animationComplete, setAnimationComplete] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  
+  // Efeito de digitação para os novos textos
+  const typingLines = [
+    "Certificado digital",
+    "Consultoria de certificado digital"
+  ];
+  const [typingText, setTypingText] = useState('');
+  const [typingIndex, setTypingIndex] = useState(0);
+  const [lineIndex, setLineIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   // Função para rolar suavemente até uma seção
   const scrollToSection = (sectionId: string) => {
@@ -36,53 +38,42 @@ export default function Home() {
     setIsMobileMenuOpen(false); // Fecha o menu mobile se estiver aberto
   };
 
-  // Função para reiniciar a animação
-  const resetAnimation = () => {
-    setCurrentLineIndex(0);
-    setCurrentText('');
-    setDisplayedLines([]);
-    setAnimationComplete(false);
-  };
+  useEffect(() => {
+    // Efeito de fade-in quando o componente é montado
+    setIsVisible(true);
+  }, []);
 
   // Efeito de digitação
   useEffect(() => {
-    if (currentLineIndex >= lines.length) {
-      setAnimationComplete(true);
-      return;
-    }
+    const currentLine = typingLines[lineIndex];
+    const typingSpeed = isDeleting ? 50 : 150;
+    const pauseBetweenLines = 2000;
 
-    const line = lines[currentLineIndex];
-    let charIndex = 0;
-    let text = '';
-
-    const typeLine = setInterval(() => {
-      if (charIndex < line.text.length) {
-        text += line.text[charIndex];
-        setCurrentText(text);
-        charIndex++;
+    const handleTyping = () => {
+      if (isDeleting) {
+        // Modo apagando
+        if (typingText.length > 0) {
+          setTypingText(currentLine.substring(0, typingText.length - 1));
+        } else {
+          setIsDeleting(false);
+          setLineIndex((lineIndex + 1) % typingLines.length);
+        }
       } else {
-        clearInterval(typeLine);
-        setTimeout(() => {
-          setDisplayedLines(prev => [...prev, line]);
-          setCurrentText('');
-          setCurrentLineIndex(prev => prev + 1);
-        }, 800);
+        // Modo digitando
+        if (typingText.length < currentLine.length) {
+          setTypingText(currentLine.substring(0, typingText.length + 1));
+        } else if (typingIndex < 1) {
+          // Pausa antes de apagar apenas na primeira passagem
+          setTimeout(() => setIsDeleting(true), pauseBetweenLines);
+        } else {
+          setIsDeleting(true);
+        }
       }
-    }, 80);
+    };
 
-    return () => clearInterval(typeLine);
-  }, [currentLineIndex]);
-
-  // Efeito para reiniciar a animação após 25 segundos quando completa
-  useEffect(() => {
-    if (!animationComplete) return;
-
-    const restartTimer = setTimeout(() => {
-      resetAnimation();
-    }, 25000); // 25 segundos
-
-    return () => clearTimeout(restartTimer);
-  }, [animationComplete]);
+    const typingTimer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(typingTimer);
+  }, [typingText, isDeleting, lineIndex, typingIndex]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -100,10 +91,10 @@ export default function Home() {
           {/* Top Menu */}
           <header className="flex justify-between items-center px-6 md:px-12 py-6">
             <Image
-              src="/loupit-logo.png"
-              alt="Logo Loupit"
-              width={150}
-              height={50}
+              src="/logo-teeconsulting.png"
+              alt="Logo T&E Consulting"
+              width={450}
+              height={80}
               priority
             />
             
@@ -115,9 +106,9 @@ export default function Home() {
                   e.preventDefault();
                   scrollToSection('platform');
                 }}
-                className="hover:text-pink-500 transition-colors duration-300"
+                className="hover:text-[#EC2224] transition-colors duration-300"
               >
-                Plataforma
+                Certificados
               </a>
               <a 
                 href="#travel" 
@@ -125,9 +116,9 @@ export default function Home() {
                   e.preventDefault();
                   scrollToSection('travel');
                 }}
-                className="hover:text-pink-500 transition-colors duration-300"
+                className="hover:text-[#EC2224] transition-colors duration-300"
               >
-                Viagem
+                Benefícios da certificação
               </a>
               <a 
                 href="#expense" 
@@ -135,9 +126,9 @@ export default function Home() {
                   e.preventDefault();
                   scrollToSection('expense');
                 }}
-                className="hover:text-pink-500 transition-colors duration-300"
+                className="hover:text-[#EC2224] transition-colors duration-300"
               >
-                Gestão de despesas
+                Consultoria especializada
               </a>
               <a 
                 href="#integration" 
@@ -145,7 +136,7 @@ export default function Home() {
                   e.preventDefault();
                   scrollToSection('integration');
                 }}
-                className="hover:text-pink-500 transition-colors duration-300"
+                className="hover:text-[#EC2224] transition-colors duration-300"
               >
                 Integração
               </a>
@@ -155,7 +146,7 @@ export default function Home() {
                   e.preventDefault();
                   scrollToSection('contact');
                 }}
-                className="hover:text-pink-500 transition-colors duration-300"
+                className="hover:text-[#EC2224] transition-colors duration-300"
               >
                 Contato
               </a>
@@ -185,7 +176,7 @@ export default function Home() {
               ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}
             `}>
               <button 
-                className="absolute top-4 right-4 text-white hover:text-pink-500 transition-colors duration-300"
+                className="absolute top-4 right-4 text-white hover:text-[#EC2224] transition-colors duration-300"
                 onClick={toggleMobileMenu}
                 aria-label="Fechar menu"
               >
@@ -201,9 +192,9 @@ export default function Home() {
                     e.preventDefault();
                     scrollToSection('platform');
                   }}
-                  className="hover:text-pink-500 transition-colors duration-300 py-2"
+                  className="hover:text-[#EC2224] transition-colors duration-300 py-2"
                 >
-                  Plataforma
+                  Certificados
                 </a>
                 <a 
                 href="#clients" 
@@ -211,7 +202,7 @@ export default function Home() {
                   e.preventDefault();
                   scrollToSection('clients');
                 }}
-                className="hover:text-pink-500 transition-colors duration-300"
+                className="hover:text-[#EC2224] transition-colors duration-300"
               >
                 Clientes
               </a>
@@ -221,7 +212,7 @@ export default function Home() {
                   e.preventDefault();
                   scrollToSection('global');
                 }}
-                className="hover:text-pink-500 transition-colors duration-300"
+                className="hover:text-[#EC2224] transition-colors duration-300"
               >
                 Presença global
               </a>
@@ -231,7 +222,7 @@ export default function Home() {
                   e.preventDefault();
                   scrollToSection('hotel');
                 }}
-                className="hover:text-pink-500 transition-colors duration-300"
+                className="hover:text-[#EC2224] transition-colors duration-300"
               >
                 Hospedagem
               </a>
@@ -241,9 +232,9 @@ export default function Home() {
                   e.preventDefault();
                   scrollToSection('travel');
                 }}
-                className="hover:text-pink-500 transition-colors duration-300"
+                className="hover:text-[#EC2224] transition-colors duration-300"
               >
-                Viagem
+                Benefícios da certificação
               </a>
               <a 
                 href="#expense" 
@@ -251,9 +242,9 @@ export default function Home() {
                   e.preventDefault();
                   scrollToSection('expense');
                 }}
-                className="hover:text-pink-500 transition-colors duration-300"
+                className="hover:text-[#EC2224] transition-colors duration-300"
               >
-                Gestão de despesas
+                Consultoria especializada
               </a>
               <a 
                 href="#integration" 
@@ -261,7 +252,7 @@ export default function Home() {
                   e.preventDefault();
                   scrollToSection('integration');
                 }}
-                className="hover:text-pink-500 transition-colors duration-300"
+                className="hover:text-[#EC2224] transition-colors duration-300"
               >
                 Integração
               </a>
@@ -271,7 +262,7 @@ export default function Home() {
                   e.preventDefault();
                   scrollToSection('why');
                 }}
-                className="hover:text-pink-500 transition-colors duration-300"
+                className="hover:text-[#EC2224] transition-colors duration-300"
               >
                 Porque loupit??
               </a>
@@ -281,7 +272,7 @@ export default function Home() {
                   e.preventDefault();
                   scrollToSection('contact');
                 }}
-                className="hover:text-pink-500 transition-colors duration-300"
+                className="hover:text-[#EC2224] transition-colors duration-300"
               >
                 Contato
               </a>
@@ -289,35 +280,25 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Conteúdo Principal */}
+          {/* Conteúdo Principal - Agora dividido em esquerda e direita */}
           <main className="flex flex-1 items-center px-6 md:px-12">
-            <div className="max-w-2xl">
+            {/* Parte esquerda - Título principal */}
+            <div className={`w-1/2 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light leading-tight mb-8 space-y-1">
-                {displayedLines.map((line, idx) => (
-                  <div 
-                    key={idx} 
-                    className={`
-                      ${line.isPink ? 'text-pink-500' : ''}
-                      ${line.isBold ? 'font-bold' : 'font-light'}
-                    `}
-                  >
-                    {line.text}
-                  </div>
-                ))}
-                {currentText && (
-                  <div className="border-r-2 border-white inline-block pr-1 animate-pulse">
-                    {currentText}
-                  </div>
-                )}
+                <div className="text-4xl md:text-5xl font-bold text-[#EC2224] mb-4 min-h-[60px]">
+                  {typingText}
+                  <span className="animate-pulse">|</span>
+                </div>
+                <div className="font-light">Viagens corporativas</div>
               </h1>
 
-              {/* Subtítulo */}
-              {currentLineIndex >= lines.length && (
-                <p className="text-2xl sm:text-3xl font-light mt-2 border-t border-white pt-6 max-w-xl">
+              {/* Subtítulo - Efeito de slide-in */}
+              <div className={`overflow-hidden`}>
+                <div className={`text-2xl sm:text-3xl font-light mt-2 border-t border-white pt-6 max-w-xl transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                   Mais rapidez, inovação e economia<br />
                   para transformar a forma como sua empresa viaja.
-                </p>
-              )}
+                </div>
+              </div>
             </div>
           </main>
         </div>
@@ -328,10 +309,6 @@ export default function Home() {
       {/* Seções com IDs para scroll */}
       <div id="platform">
         <PlatformSection />
-      </div>
-
-      <div id="clients">
-        <ClientsSlider />
       </div>
 
       <div id="global">

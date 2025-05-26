@@ -1,61 +1,86 @@
 'use client';
 
-import Image from 'next/image';
-
-export default function TravelSection() {
+export default function CertificationBenefits() {
   return (
     <section className="bg-white w-full py-20 px-6 text-black">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-        {/* Texto à esquerda */}
-        <div>
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-6">
-            SÓ A <span className="text-[#F20077]">LOUPIT</span> FAZ POR VOCÊ!
-            <br />
-            VIAGENS
-          </h2>
+      <div className="max-w-7xl mx-auto flex flex-col items-center">
+        {/* Título centralizado */}
+        <h2 className="text-2xl md:text-3xl font-extrabold mb-6 text-center">
+          BENEFÍCIOS DA <span className="text-[#EC2224]">CERTIFICAÇÃO</span>
+        </h2>
 
-          <ul className="space-y-5 text-base md:text-lg text-gray-800">
-            <li className="flex items-start gap-2">
-              <span className="mt-1">•</span>
-              <span>
-                Disponibilidade de utilização dos melhores acordos existentes no mercado, acordo comercial do cliente, acordo comercial da Loupit, marketplace global conectado às melhores tarifas do mundo.
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="mt-1">•</span>
-              <span>Remarcação simplificada na mesma solicitação</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="mt-1">•</span>
-              <span>Check-in automático</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="mt-1">•</span>
-              <span>Notificações e alertas sobre alterações de voos</span>
-            </li>
-          </ul>
-        </div>
-
-        {/* Imagens à direita */}
-        <div className="relative w-full flex justify-center items-center">
-          {/* Imagem horizontal (fundo) */}
-          <div className="relative w-[400px] h-[280px] sm:w-[500px] sm:h-[340px] rounded-md overflow-hidden shadow-xl z-10">
-            <Image
-              src="/imagem-horizontal-loupit.png"
-              alt="Imagem Viagem Horizontal"
-              fill
-              className="object-cover"
-            />
+        {/* Container principal com duas colunas */}
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mt-12">
+          {/* Coluna esquerda - Lista de benefícios */}
+          <div className="space-y-6">
+            {[
+              {
+                number: 1,
+                title: 'Competitividade',
+                description: 'Consolidação e destaque frente à concorrência.',
+              },
+              {
+                number: 2,
+                title: 'Imagem Fortalecida',
+                description: 'Empresa mais robusta e respeitada no mercado.',
+              },
+              {
+                number: 3,
+                title: 'Melhoria Contínua',
+                description: 'Identificação de erros e oportunidades de aprimoramento.',
+              },
+              {
+                number: 4,
+                title: 'Novos Negócios',
+                description: 'Acesso facilitado a clientes que exigem certificação.',
+              },
+            ].map((item) => (
+              <div key={item.number} className="flex items-start gap-4 p-4 hover:bg-gray-50 rounded-lg transition">
+                <div className="bg-[#EC2224] text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  {item.number}
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">{item.title}</h3>
+                  <p className="text-gray-600">{item.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
 
-          {/* Imagem vertical (sobreposta no canto inferior direito) */}
-          <div className="absolute right-[-30px] bottom-[-30px] w-[180px] h-[260px] sm:w-[200px] sm:h-[300px] z-20 shadow-2xl rounded-md overflow-hidden">
-            <Image
-              src="/imagem-vertical-loupit.png"
-              alt="Imagem Viagem Vertical"
-              fill
-              className="object-cover"
-            />
+          {/* Coluna direita - Continuação da lista */}
+          <div className="space-y-6">
+            {[
+              {
+                number: 6,
+                title: 'Credibilidade',
+                description: 'Aumenta a confiança no serviço prestado.',
+              },
+              {
+                number: 7,
+                title: 'Eficiência',
+                description: 'Processos otimizados e mais produtividade.',
+              },
+              {
+                number: 8,
+                title: 'Satisfação do Cliente',
+                description: 'Qualidade percebida pelos clientes finais.',
+              },
+              {
+                number: 9,
+                title: 'Conformidade',
+                description: 'Atendimento a regras e normas, evitando multas.',
+              },
+            ].map((item) => (
+              <div key={item.number} className="flex items-start gap-4 p-4 hover:bg-gray-50 rounded-lg transition">
+                <div className="bg-[#EC2224] text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  {item.number}
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">{item.title}</h3>
+                  <p className="text-gray-600">{item.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
