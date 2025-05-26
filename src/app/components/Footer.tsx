@@ -28,8 +28,8 @@ export default function Footer() {
               </svg>
               <p>
                 <strong className="font-semibold">Email:</strong> 
-                <a href="mailto:atendimento@loupit.com" className="text-blue-400 hover:underline ml-1">
-                  atendimento@loupit.com
+                <a href="mailto:atendimento@teeconsulting.com" className="text-blue-400 hover:underline ml-1">
+                  atendimento@teeconsulting.com
                 </a>
               </p>
             </div>
