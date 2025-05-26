@@ -21,6 +21,7 @@ export default function Home() {
   
   // Efeito de digitação para os novos textos
   const typingLines = [
+    "Mauricio Paganotto",
     "Certificado digital",
     "Consultoria de certificado digital"
   ];
@@ -93,7 +94,7 @@ export default function Home() {
             <Image
               src="/logo-teeconsulting.png"
               alt="Logo T&E Consulting"
-              width={450}
+              width={300}
               height={80}
               priority
             />
