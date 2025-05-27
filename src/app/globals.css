@@ -23,7 +23,9 @@ body {
   min-height: 600px;
   overflow: hidden;
 
-  background-image: url('/teeconsulting-background.png');
+  /*background-image: url('/teeconsulting-background.png');*/
+  /*background-image: url('/teeconsulting-backgrounds3.jpg');*/
+  background-image: url('/teeconsulting-backgrounds4.jpg');
   background-size: cover;
   background-position: top left;
   background-repeat: no-repeat;
