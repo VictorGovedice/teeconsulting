@@ -9,8 +9,8 @@ export default function CertificationBenefits() {
           BENEFÍCIOS DA <span className="text-[#EC2224]">CERTIFICAÇÃO</span>
         </h2>
 
-        {/* Container principal com duas colunas */}
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mt-12">
+        {/* Container principal com três colunas */}
+        <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-8 items-start mt-12">
           {/* Coluna esquerda - Lista de benefícios */}
           <div className="space-y-6">
             {[
@@ -45,6 +45,15 @@ export default function CertificationBenefits() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Coluna do meio - Imagem do certificado */}
+          <div className="flex justify-center items-center">
+            <img 
+              src="/certificado-teeconsulting-travel.png" 
+              alt="Certificado Teeconsulting Travel" 
+              className="w-full max-w-xs md:max-w-sm lg:max-w-md rounded-lg shadow-lg"
+            />
           </div>
 
           {/* Coluna direita - Continuação da lista */}

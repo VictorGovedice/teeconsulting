@@ -106,10 +106,10 @@ export default function CertificateSection() {
               <button
                 key={cert}
                 onClick={() => setActiveTab(cert)}
-                className={`px-4 py-2 rounded-md font-medium ${
+                className={`px-4 py-2 rounded-md font-medium transition-colors ${
                   activeTab === cert
                     ? 'bg-white text-black'
-                    : 'bg-gray-800 text-white hover:bg-gray-700'
+                    : 'bg-[#EC2224] text-white hover:bg-[#FF4D4F]'
                 }`}
               >
                 {cert}

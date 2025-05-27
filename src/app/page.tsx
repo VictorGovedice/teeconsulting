@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import './globals.css';
 import PlatformSection from '@/app/components/PlatformSection';
-//import ClientsSlider from './components/ClientsSlider';
+import ClientsSlider from './components/ClientsSlider';
 import GlobalPresence from './components/GlobalPresence';
 import HotelSection from './components/HotelSection';
 import TravelSection from './components/TravelSection';
@@ -14,6 +14,7 @@ import WhyLoupitSection from './components/WhyLoupitSection';
 import Footer from './components/Footer';
 import PromoBanner from './components/PromoBanner';
 import ScrollToTopButton from './components/FloatingButtons';
+import CorporateAuditSection from './components/CorporateAuditSection';
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,8 +22,7 @@ export default function Home() {
   
   // Efeito de digitação para os novos textos
   const typingLines = [
-    "Mauricio Paganotto",
-    "Certificado digital",
+    "Melhores praticas",
     "Consultoria de certificado digital"
   ];
   const [typingText, setTypingText] = useState('');
@@ -112,14 +112,24 @@ export default function Home() {
                 Certificados
               </a>
               <a 
-                href="#travel" 
+                href="#audit" 
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection('travel');
+                  scrollToSection('audit');
                 }}
                 className="hover:text-[#EC2224] transition-colors duration-300"
               >
-                Benefícios da certificação
+                Auditoria para empresa
+              </a>
+              <a 
+                href="#benefits" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('benefits');
+                }}
+                className="hover:text-[#EC2224] transition-colors duration-300"
+              >
+                Benefícios
               </a>
               <a 
                 href="#expense" 
@@ -140,6 +150,16 @@ export default function Home() {
                 className="hover:text-[#EC2224] transition-colors duration-300"
               >
                 Integração
+              </a>
+              <a 
+                href="#global" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('global');
+                }}
+                className="hover:text-[#EC2224] transition-colors duration-300"
+              >
+                Quem somos
               </a>
               <a 
                 href="#contact" 
@@ -198,14 +218,24 @@ export default function Home() {
                   Certificados
                 </a>
                 <a 
-                  href="#travel" 
+                  href="#audit" 
                   onClick={(e) => {
                     e.preventDefault();
-                    scrollToSection('travel');
+                    scrollToSection('audit');
                   }}
                   className="hover:text-black transition-colors duration-300 py-2"
                 >
-                  Benefícios da certificação
+                  Auditoria para empresa
+                </a>
+                <a 
+                  href="#benefits" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('benefits');
+                  }}
+                  className="hover:text-black transition-colors duration-300 py-2"
+                >
+                  Benefícios
                 </a>
                 <a 
                   href="#expense" 
@@ -226,6 +256,16 @@ export default function Home() {
                   className="hover:text-black transition-colors duration-300 py-2"
                 >
                   Integração
+                </a>
+                <a 
+                  href="#global" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('global');
+                  }}
+                  className="hover:text-black transition-colors duration-300 py-2"
+                >
+                  Quem somos
                 </a>
                 <a 
                   href="#contact" 
@@ -276,11 +316,19 @@ export default function Home() {
         <GlobalPresence />
       </div>
 
+      <div>
+        <ClientsSlider />
+      </div>
+
       <div id="hotel">
         <HotelSection />
       </div>
 
-      <div id="travel">
+      <div id="audit">
+        <CorporateAuditSection />
+      </div>
+
+      <div id="benefits">
         <TravelSection />
       </div>
 

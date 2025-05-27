@@ -12,23 +12,17 @@ export default function PlatformSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              CERTIFICADO TE CONSULTING
+              CERTIFICAÇÃO TE 7000
             </h2>
             <p className="text-xl md:text-2xl font-light mb-8 max-w-2xl">
-              A TE Consulting é certificada pela ANAC como Agência de Viagens, garantindo 
-              qualidade e segurança em todos os serviços oferecidos.
+              Transparência que Gera Confiança
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
-                'Certificação ANAC nº 2023-1-0036',
-                'Agência de viagens autorizada',
-                'Processos regulamentados',
-                'Segurança nas transações',
-                'Conformidade com as normas',
-                'Atendimento especializado',
-                'Suporte durante toda a viagem',
-                'Gestão de viagens corporativas'
+                'Transparência: Processos transparentes em empresas certificadas para garantir a confiança dos seus clientes.',
+                'Reconhecimento: Certificação garantida pela consultoria pioneira em viagens corporativas auditando processos desde 2002.',
+                'Confiabilidade: Nossa metodologia garante resultados consistentes e auditáveis em toda cadeia de viagens empresariais.'
               ].map((item, index) => (
                 <div key={index} className="flex items-start">
                   <div className="text-[#EC2224] mt-1 mr-3">
@@ -43,10 +37,10 @@ export default function PlatformSection() {
           </div>
 
           <div className="relative flex justify-center">
-            <div className="w-full max-w-md"> {/* Container para controlar o tamanho */}
+            <div className="w-full max-w-md">
               <Image
                 src="/certificado-te-consulting.png"
-                alt="Certificado TE Consulting"
+                alt="Certificação TE 7000: Transparência que Gera Confiança"
                 width={450}
                 height={300} 
                 className="rounded-lg object-contain"
