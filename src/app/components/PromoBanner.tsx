@@ -9,16 +9,18 @@ export default function PromoBanner() {
   const banners = [
     {
       id: 'empresa',
-      bgColor: 'bg-[#EC2224]',
+      bgColor: 'bg-[#EC2224]', // Vermelho escuro
+      barColor: 'bg-[#FF6B6B]', // Vermelho claro
       text: 'EMPRESA: Otimize suas viagens corporativas',
-      buttonText: 'Solicite seu diagnóstico em viagens corporativas gratuito',
+      buttonText: 'Diagnóstico gratuito',
       buttonLink: '#diagnostico-viagens'
     },
     {
       id: 'fornecedores',
-      bgColor: 'bg-[#2E5CFF]',
+      bgColor: 'bg-[#FF6B6B]', // Vermelho claro
+      barColor: 'bg-[#EC2224]', // Vermelho escuro
       text: 'Fornecedores: Destaque-se no mercado',
-      buttonText: 'Solicite sua certificação de melhores práticas',
+      buttonText: 'Certificação',
       buttonLink: '#certificacao-fornecedores'
     }
   ];
@@ -67,31 +69,39 @@ export default function PromoBanner() {
 
   return (
     <div className="fixed top-0 left-0 w-full z-50">
-      {banners.map((banner) => (
-        <div
-          key={banner.id}
-          className={`w-full ${banner.bgColor} text-white shadow-md py-3 px-4`}
-        >
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-base md:text-lg font-medium relative">
-            <div className="text-center md:text-left">
-              {banner.text}
+      <div className="flex">
+        {banners.map((banner) => (
+          <div key={banner.id} className="flex-1 relative">
+            {/* Barra lateral esquerda */}
+            <div className={`absolute left-0 top-0 bottom-0 w-1 ${banner.barColor}`}></div>
+            
+            {/* Conteúdo principal */}
+            <div className={`${banner.bgColor} text-white shadow-md py-2 px-4 h-full`}>
+              <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2 text-sm md:text-base font-medium relative">
+                <div className="text-center md:text-left">
+                  {banner.text}
+                </div>
+                
+                <div className="flex items-center gap-2">
+                  <a
+                    href={banner.buttonLink}
+                    className="bg-white text-black hover:bg-gray-100 transition-colors px-3 py-1 rounded-md text-xs md:text-sm font-semibold whitespace-nowrap"
+                  >
+                    {banner.buttonText}
+                  </a>
+                </div>
+              </div>
             </div>
             
-            <div className="flex items-center gap-4">
-              <a
-                href={banner.buttonLink}
-                className="bg-white text-black hover:bg-gray-100 transition-colors px-5 py-2 rounded-md text-sm md:text-base font-semibold whitespace-nowrap"
-              >
-                {banner.buttonText}
-              </a>
-            </div>
+            {/* Barra lateral direita */}
+            <div className={`absolute right-0 top-0 bottom-0 w-1 ${banner.barColor}`}></div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
       
       <button
         onClick={handleClose}
-        className="absolute top-4 right-4 text-white text-2xl hover:text-gray-300"
+        className="absolute top-2 right-2 text-white text-xl hover:text-gray-300"
         aria-label="Fechar banner"
       >
         &times;

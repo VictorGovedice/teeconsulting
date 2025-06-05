@@ -97,77 +97,69 @@ export default function Home() {
               width={300}
               height={80}
               priority
+              className="w-auto h-12 md:h-20" // Adicionado para responsividade
             />
             
             {/* Menu Desktop */}
-            <nav className="hidden md:flex gap-8 text-base uppercase tracking-wider text-white">
+            <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-sm lg:text-base uppercase tracking-wider text-white flex-wrap justify-end max-w-[60%]">
               <a 
-                href="#platform" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('platform');
-                }}
-                className="hover:text-[#EC2224] transition-colors duration-300"
-              >
-                Certificados
-              </a>
-              <a 
-                href="#audit" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('audit');
-                }}
-                className="hover:text-[#EC2224] transition-colors duration-300"
-              >
-                Auditoria para empresa
-              </a>
-              <a 
-                href="#benefits" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('benefits');
-                }}
-                className="hover:text-[#EC2224] transition-colors duration-300"
-              >
-                Benefícios
-              </a>
-              <a 
-                href="#expense" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('expense');
-                }}
-                className="hover:text-[#EC2224] transition-colors duration-300"
-              >
-                Consultoria especializada
-              </a>
-              <a 
-                href="#integration" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('integration');
-                }}
-                className="hover:text-[#EC2224] transition-colors duration-300"
-              >
-                Integração
-              </a>
-              <a 
-                href="#global" 
+                href="#quem-somos" 
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection('global');
                 }}
-                className="hover:text-[#EC2224] transition-colors duration-300"
+                className="hover:text-[#EC2224] transition-colors duration-300 whitespace-nowrap"
               >
-                Quem somos
+                Quem Somos
               </a>
               <a 
-                href="#contact" 
+                href="#consultoria" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('expense');
+                }}
+                className="hover:text-[#EC2224] transition-colors duration-300 whitespace-nowrap"
+              >
+                Consultoria
+              </a>
+              <a 
+                href="#auditoria" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('audit');
+                }}
+                className="hover:text-[#EC2224] transition-colors duration-300 whitespace-nowrap"
+              >
+                Auditoria
+              </a>
+              <a 
+                href="#certificacao" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('platform');
+                }}
+                className="hover:text-[#EC2224] transition-colors duration-300 whitespace-nowrap"
+              >
+                Certificação TE 7000
+              </a>
+              <a 
+                href="#clientes" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  const clientsSection = document.querySelector('.clients-slider');
+                  clientsSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="hover:text-[#EC2224] transition-colors duration-300 whitespace-nowrap"
+              >
+                Clientes
+              </a>
+              <a 
+                href="#contato" 
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection('contact');
                 }}
-                className="hover:text-[#EC2224] transition-colors duration-300"
+                className="hover:text-[#EC2224] transition-colors duration-300 whitespace-nowrap"
               >
                 Contato
               </a>
@@ -208,67 +200,58 @@ export default function Home() {
 
               <nav className="flex flex-col gap-6 mt-12 text-lg uppercase text-white">
                 <a 
-                  href="#platform" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection('platform');
-                  }}
-                  className="hover:text-black transition-colors duration-300 py-2"
-                >
-                  Certificados
-                </a>
-                <a 
-                  href="#audit" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection('audit');
-                  }}
-                  className="hover:text-black transition-colors duration-300 py-2"
-                >
-                  Auditoria para empresa
-                </a>
-                <a 
-                  href="#benefits" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection('benefits');
-                  }}
-                  className="hover:text-black transition-colors duration-300 py-2"
-                >
-                  Benefícios
-                </a>
-                <a 
-                  href="#expense" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection('expense');
-                  }}
-                  className="hover:text-black transition-colors duration-300 py-2"
-                >
-                  Consultoria especializada
-                </a>
-                <a 
-                  href="#integration" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection('integration');
-                  }}
-                  className="hover:text-black transition-colors duration-300 py-2"
-                >
-                  Integração
-                </a>
-                <a 
-                  href="#global" 
+                  href="#quem-somos" 
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection('global');
                   }}
                   className="hover:text-black transition-colors duration-300 py-2"
                 >
-                  Quem somos
+                  Quem Somos
                 </a>
                 <a 
-                  href="#contact" 
+                  href="#consultoria" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('expense');
+                  }}
+                  className="hover:text-black transition-colors duration-300 py-2"
+                >
+                  Consultoria
+                </a>
+                <a 
+                  href="#auditoria" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('audit');
+                  }}
+                  className="hover:text-black transition-colors duration-300 py-2"
+                >
+                  Auditoria
+                </a>
+                <a 
+                  href="#certificacao" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('platform');
+                  }}
+                  className="hover:text-black transition-colors duration-300 py-2"
+                >
+                  Certificação TE 7000
+                </a>
+                <a 
+                  href="#clientes" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const clientsSection = document.querySelector('.clients-slider');
+                    clientsSection?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="hover:text-black transition-colors duration-300 py-2"
+                >
+                  Clientes
+                </a>
+                <a 
+                  href="#contato" 
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection('contact');
@@ -316,7 +299,7 @@ export default function Home() {
         <GlobalPresence />
       </div>
 
-      <div>
+      <div className="clients-slider">
         <ClientsSlider />
       </div>
 
