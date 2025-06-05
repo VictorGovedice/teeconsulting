@@ -23,7 +23,7 @@ export default function Home() {
   // Efeito de digitação para os novos textos
   const typingLines = [
     "Melhores praticas",
-    "Consultoria de certificado digital"
+    "Consultoria e Auditoria especializada"
   ];
   const [typingText, setTypingText] = useState('');
   const [typingIndex] = useState(0);
@@ -273,13 +273,13 @@ export default function Home() {
                   {typingText}
                   <span className="animate-pulse">|</span>
                 </div>
-                <div className="font-light">Viagens corporativas</div>
+                <div className="font-light">Viagens e Eventos Corporativos</div>
               </h1>
 
               {/* Subtítulo - Efeito de slide-in */}
               <div className={`overflow-hidden`}>
                 <div className={`text-2xl sm:text-3xl font-light mt-2 border-t border-white pt-6 max-w-xl transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                  Mais rapidez, inovação e economia<br />
+                  Projetos Customizados<br />
                   para transformar a forma como sua empresa viaja.
                 </div>
               </div>

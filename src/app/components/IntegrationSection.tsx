@@ -81,7 +81,7 @@ export default function BenefitsResultsSection() {
           {/* Item 4 - Tempo Economizado */}
           <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:transform hover:scale-105 transition-transform duration-300">
             <div className="text-5xl font-bold text-[#EC2224] mb-4">
-              <Counter target={20} />
+              <Counter target={60} />
             </div>
             <h3 className="text-xl font-bold mb-2">Tempo Economizado</h3>
             <p className="text-gray-600">Redução em horas de trabalho operacional.</p>

@@ -125,20 +125,6 @@ export default function ConsultancySection() {
             </div>
           </div>
 
-          {/* Service Item 9 */}
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:border-red-400 transition-all">
-            <div className="flex items-start gap-4">
-              <div className="p-3 rounded-full" style={{ backgroundColor: '#EC2224' }}>
-                <FaCheckCircle className="text-white text-xl" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Auditoria Corporativa</h3>
-                <p className="text-gray-200">• Fornecedores e Sistemas</p>
-                <p className="text-gray-200 ml-4">Verificação de conformidade técnica.</p>
-              </div>
-            </div>
-          </div>
-
           {/* Service Item 10 */}
           <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:border-red-400 transition-all">
             <div className="flex items-start gap-4">
