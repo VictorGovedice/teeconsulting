@@ -16,7 +16,7 @@ export default function AboutUs() {
             <div>
               <h3 className="text-3xl font-semibold text-[#EC2224] mb-6">23 anos de mercado</h3>
               <p className="text-xl text-gray-700 leading-relaxed">
-                Atuamos desde 2002 com foco exclusivo em processos viagens e eventos corporativos.
+                Pioneirismo desde 2002 com foco exclusivo em processos viagens e eventos corporativos.
               </p>
             </div>
 

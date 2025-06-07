@@ -23,7 +23,7 @@ export default function Home() {
   // Efeito de digitação para os novos textos
   const typingLines = [
     "Melhores praticas",
-    "Consultoria e Auditoria especializada"
+    "Consultoria e Auditoria especializada.",
   ];
   const [typingText, setTypingText] = useState('');
   const [typingIndex] = useState(0);
@@ -291,12 +291,25 @@ export default function Home() {
       <ScrollToTopButton/>
 
       {/* Seções com IDs para scroll */}
-      <div id="platform">
-        <PlatformSection />
-      </div>
 
       <div id="global">
         <GlobalPresence />
+      </div>
+
+      <div id="expense">
+        <ExpenseSection />
+      </div>
+
+      <div id="why">
+        <WhyLoupitSection />
+      </div>
+
+      <div id="audit">
+        <CorporateAuditSection />
+      </div>
+
+      <div id="platform">
+        <PlatformSection />
       </div>
 
       <div className="clients-slider">
@@ -307,24 +320,12 @@ export default function Home() {
         <HotelSection />
       </div>
 
-      <div id="audit">
-        <CorporateAuditSection />
-      </div>
-
       <div id="benefits">
         <TravelSection />
       </div>
 
-      <div id="expense">
-        <ExpenseSection />
-      </div>
-
       <div id="integration">
         <IntegrationSection />
-      </div>
-
-      <div id="why">
-        <WhyLoupitSection />
       </div>
 
       <div id="contact">

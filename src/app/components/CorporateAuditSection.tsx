@@ -13,22 +13,22 @@ export default function CorporateAuditSection() {
     { 
       icon: <FaClipboardCheck className="text-4xl text-[#EC2224]" />,
       title: "Fornecedores e Sistemas",
-      description: "Verificação de conformidade técnica."
+      description: ""
     },
     { 
       icon: <FaMoneyBillWave className="text-4xl text-[#EC2224]" />,
-      title: "Eventos Corporativos",
-      description: "Controle de investimentos em ações externas."
+      title: "Spot Check",
+      description: "Auditoria presencial em eventos"
     },
     { 
       icon: <FaCheckCircle className="text-4xl text-[#EC2224]" />,
-      title: "Processos de Despesas",
-      description: "Análise de fluxos financeiros."
+      title: "Processos de Compras e Despesas",
+      description: ""
     },
     { 
       icon: <FaShieldAlt className="text-4xl text-[#EC2224]" />,
       title: "Meios de Pagamento",
-      description: "Validação de segurança transacional."
+      description: ""
     }
   ];
 
@@ -72,8 +72,8 @@ export default function CorporateAuditSection() {
             className="text-center mb-16"
           >
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold">
-              <span className="text-black">AUDITORIA </span>
-              <span className="text-[#EC2224]">CORPORATIVA</span>
+              <span className="text-black">AUDITORIA EM</span>
+              <span className="text-[#EC2224]">VIAGENS E EVENTOS CORPORATIVOS</span>
             </h2>
             <div className="w-24 h-1 bg-[#EC2224] mx-auto mt-4"></div>
           </motion.div>

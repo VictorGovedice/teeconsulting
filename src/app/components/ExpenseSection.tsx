@@ -53,8 +53,8 @@ export default function ConsultancySection() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-2">Serviços de Outsourcing</h3>
-                <p className="text-gray-200">• Benchmarking</p>
-                <p className="text-gray-200 ml-4">Comparativo com melhores práticas do mercado.</p>
+                <p className="text-gray-200">• BPO</p>
+                <p className="text-gray-200 ml-4">Suporte a gestão terceiriza.</p>
               </div>
             </div>
           </div>
@@ -67,7 +67,7 @@ export default function ConsultancySection() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-2">Elaboração de Bids</h3>
-                <p className="text-gray-200">• Prozessos de Despesas</p>
+                <p className="text-gray-200">• Projeto especializado para escolha de fornecedores</p>
                 <p className="text-gray-200 ml-4">Análise de fluxos financeiros.</p>
               </div>
             </div>
@@ -121,19 +121,6 @@ export default function ConsultancySection() {
               <div>
                 <h3 className="text-xl font-semibold mb-2">Suporte à Gestão</h3>
                 <p className="text-gray-200">Acompanhamento contínuo de resultados.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Service Item 10 */}
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:border-red-400 transition-all">
-            <div className="flex items-start gap-4">
-              <div className="p-3 rounded-full" style={{ backgroundColor: '#EC2224' }}>
-                <FaCalendarAlt className="text-white text-xl" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Eventos Corporativos</h3>
-                <p className="text-gray-200">Controle de investimentos em ações externas.</p>
               </div>
             </div>
           </div>
