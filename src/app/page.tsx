@@ -308,9 +308,10 @@ export default function Home() {
         <CorporateAuditSection />
       </div>
 
-      <div id="platform">
-        <PlatformSection />
-      </div>
+      
+{/* <div id="platform">
+  <PlatformSection />
+</div> */}
 
       <div className="clients-slider">
         <ClientsSlider />

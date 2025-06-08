@@ -2,17 +2,26 @@
 
 export default function CertificationBenefits() {
   return (
-    <section className="bg-white w-full py-20 px-6 text-black">
-      <div className="max-w-7xl mx-auto flex flex-col items-center">
-        {/* Título centralizado */}
-        <h2 className="text-2xl md:text-3xl font-extrabold mb-6 text-center">
-          BENEFÍCIOS DA <span className="text-[#EC2224]">CERTIFICAÇÃO</span>
-        </h2>
+    <section className="bg-white w-full py-12 px-6 text-black">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center">
+        {/* Container da imagem - Canto superior esquerdo, menor */}
+        <div className="md:w-1/3 flex justify-start items-start mb-8 md:mb-0 md:mr-8">
+          <img
+            src="/certificado-teeconsulting-travel.png"
+            alt="Certificado Teeconsulting Travel"
+            className="w-32 h-auto md:w-40 rounded-lg shadow-md" /* Tamanho menor para a imagem */
+          />
+        </div>
 
-        {/* Container principal com três colunas */}
-        <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-8 items-start mt-12">
-          {/* Coluna esquerda - Lista de benefícios */}
-          <div className="space-y-6">
+        {/* Conteúdo à direita - Título e benefícios */}
+        <div className="md:w-2/3 flex flex-col">
+          {/* Título */}
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-6 text-left">
+            BENEFÍCIOS DA <span className="text-[#EC2224]">CERTIFICAÇÃO</span>
+          </h2>
+
+          {/* Container dos benefícios com menos colunas para os detalhes */}
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mt-4">
             {[
               {
                 number: 1,
@@ -34,59 +43,34 @@ export default function CertificationBenefits() {
                 title: 'Novos Negócios',
                 description: 'Acesso facilitado a clientes que exigem certificação.',
               },
-            ].map((item) => (
-              <div key={item.number} className="flex items-start gap-4 p-4 hover:bg-gray-50 rounded-lg transition">
-                <div className="bg-[#EC2224] text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  {item.number}
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Coluna do meio - Imagem do certificado */}
-          <div className="flex justify-center items-center">
-            <img 
-              src="/certificado-teeconsulting-travel.png" 
-              alt="Certificado Teeconsulting Travel" 
-              className="w-full max-w-xs md:max-w-sm lg:max-w-md rounded-lg shadow-lg"
-            />
-          </div>
-
-          {/* Coluna direita - Continuação da lista */}
-          <div className="space-y-6">
-            {[
               {
-                number: 6,
+                number: 5, // Adicionei o número 5, se precisar
                 title: 'Credibilidade',
                 description: 'Aumenta a confiança no serviço prestado.',
               },
               {
-                number: 7,
+                number: 6, // Adicionei o número 6, se precisar
                 title: 'Eficiência',
                 description: 'Processos otimizados e mais produtividade.',
               },
               {
-                number: 8,
+                number: 7, // Adicionei o número 7, se precisar
                 title: 'Satisfação do Cliente',
                 description: 'Qualidade percebida pelos clientes finais.',
               },
               {
-                number: 9,
+                number: 8, // Adicionei o número 8, se precisar
                 title: 'Conformidade',
                 description: 'Atendimento a regras e normas, evitando multas.',
               },
             ].map((item) => (
-              <div key={item.number} className="flex items-start gap-4 p-4 hover:bg-gray-50 rounded-lg transition">
-                <div className="bg-[#EC2224] text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div key={item.number} className="flex items-start gap-3 p-3 hover:bg-gray-50 rounded-lg transition">
+                <div className="bg-[#EC2224] text-white rounded-full w-7 h-7 flex items-center justify-center flex-shrink-0 text-sm mt-0.5">
                   {item.number}
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
+                  <h3 className="font-bold text-base">{item.title}</h3>
+                  <p className="text-gray-600 text-sm">{item.description}</p>
                 </div>
               </div>
             ))}
