@@ -1,6 +1,6 @@
 'use client';
 
-import { FaSearch, FaChartLine, FaOutdent, FaFileAlt, FaClipboardList, FaBoxOpen, FaHandshake, FaHeadset, FaCheckCircle, FaCalendarAlt } from 'react-icons/fa';
+import { FaSearch, FaChartLine, FaOutdent, FaFileAlt, FaClipboardList, FaBoxOpen, FaHandshake, FaHeadset } from 'react-icons/fa';
 
 export default function ConsultancySection() {
   return (

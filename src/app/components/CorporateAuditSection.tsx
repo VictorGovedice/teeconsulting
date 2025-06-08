@@ -10,22 +10,22 @@ import { motion } from 'framer-motion';
 
 export default function CorporateAuditSection() {
   const auditFeatures = [
-    { 
+    {
       icon: <FaClipboardCheck className="text-4xl text-[#EC2224]" />,
       title: "Fornecedores e Sistemas",
       description: ""
     },
-    { 
+    {
       icon: <FaMoneyBillWave className="text-4xl text-[#EC2224]" />,
       title: "Spot Check",
       description: "Auditoria presencial em eventos"
     },
-    { 
+    {
       icon: <FaCheckCircle className="text-4xl text-[#EC2224]" />,
       title: "Processos de Compras e Despesas",
       description: ""
     },
-    { 
+    {
       icon: <FaShieldAlt className="text-4xl text-[#EC2224]" />,
       title: "Meios de Pagamento",
       description: ""
@@ -64,7 +64,7 @@ export default function CorporateAuditSection() {
     <>
       <section className="w-full bg-white py-24 px-6 text-black">
         <div className="max-w-6xl mx-auto">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -78,7 +78,7 @@ export default function CorporateAuditSection() {
             <div className="w-24 h-1 bg-[#EC2224] mx-auto mt-4"></div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -86,7 +86,7 @@ export default function CorporateAuditSection() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           >
             {auditFeatures.map((feature, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 variants={itemVariants}
                 whileHover="hover"
