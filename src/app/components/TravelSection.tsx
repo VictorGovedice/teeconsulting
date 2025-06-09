@@ -1,20 +1,26 @@
+// src/app/components/TravelSection.tsx
+
 'use client';
+
+import Image from 'next/image';
 
 export default function CertificationBenefits() {
   return (
     <section className="bg-white w-full py-12 px-6 text-black">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center">
-        {/* Container da imagem - Canto superior esquerdo, menor */}
-        <div className="md:w-1/3 flex justify-start items-start mb-8 md:mb-0 md:mr-8">
-          <img
+        {/* Container da Imagem - Mantém ao lado em todas as telas, mas menor no mobile */}
+        <div className="flex-shrink-0 mr-4 mb-4 md:mb-0"> {/* flex-shrink-0 para evitar que a imagem encolha muito */}
+          <Image
             src="/certificado-teeconsulting-travel.png"
             alt="Certificado Teeconsulting Travel"
-            className="w-32 h-auto md:w-40 rounded-lg shadow-md" /* Tamanho menor para a imagem */
+            width={100} // Largura para mobile
+            height={100} // Altura para mobile
+            className="w-24 h-auto md:w-40 rounded-lg shadow-md" /* w-24 para mobile, md:w-40 para desktop */
           />
         </div>
 
         {/* Conteúdo à direita - Título e benefícios */}
-        <div className="md:w-2/3 flex flex-col">
+        <div className="flex-1 flex flex-col"> {/* flex-1 para o texto ocupar o restante do espaço */}
           {/* Título */}
           <h2 className="text-2xl md:text-3xl font-extrabold mb-6 text-left">
             BENEFÍCIOS DA <span className="text-[#EC2224]">CERTIFICAÇÃO</span>
@@ -44,22 +50,22 @@ export default function CertificationBenefits() {
                 description: 'Acesso facilitado a clientes que exigem certificação.',
               },
               {
-                number: 5, // Adicionei o número 5, se precisar
+                number: 5,
                 title: 'Credibilidade',
                 description: 'Aumenta a confiança no serviço prestado.',
               },
               {
-                number: 6, // Adicionei o número 6, se precisar
+                number: 6,
                 title: 'Eficiência',
                 description: 'Processos otimizados e mais produtividade.',
               },
               {
-                number: 7, // Adicionei o número 7, se precisar
+                number: 7,
                 title: 'Satisfação do Cliente',
                 description: 'Qualidade percebida pelos clientes finais.',
               },
               {
-                number: 8, // Adicionei o número 8, se precisar
+                number: 8,
                 title: 'Conformidade',
                 description: 'Atendimento a regras e normas, evitando multas.',
               },

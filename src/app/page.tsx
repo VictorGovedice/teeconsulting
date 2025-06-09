@@ -1,9 +1,10 @@
+// src/app/page.tsx
 'use client';
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import './globals.css';
-import PlatformSection from '@/app/components/PlatformSection';
+// REMOVIDO: import PlatformSection from '@/app/components/PlatformSection'; // Comentado e não usado
 import ClientsSlider from './components/ClientsSlider';
 import GlobalPresence from './components/GlobalPresence';
 import HotelSection from './components/HotelSection';
@@ -20,11 +21,7 @@ export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   
-  // Efeito de digitação para os novos textos
-  const typingLines = [
-    "Melhores praticas",
-    "Consultoria e Auditoria especializada.",
-  ];
+  // A definição de 'typingLines' foi movida para dentro do useEffect abaixo.
   const [typingText, setTypingText] = useState('');
   const [typingIndex] = useState(0);
   const [lineIndex, setLineIndex] = useState(0);
@@ -44,8 +41,14 @@ export default function Home() {
     setIsVisible(true);
   }, []);
 
-  // Efeito de digitação
+  // Efeito de digitação - 'typingLines' agora definido aqui dentro
   useEffect(() => {
+    // A array 'typingLines' foi movida para DENTRO deste useEffect
+    const typingLines = [
+      "Melhores praticas",
+      "Consultoria e Auditoria especializada.",
+    ];
+
     const currentLine = typingLines[lineIndex];
     const typingSpeed = isDeleting ? 50 : 150;
     const pauseBetweenLines = 2000;
@@ -74,7 +77,7 @@ export default function Home() {
 
     const typingTimer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(typingTimer);
-  }, [typingText, isDeleting, lineIndex, typingIndex]);
+  }, [typingText, isDeleting, lineIndex, typingIndex]); // 'typingLines' foi removido das dependências, pois está dentro do hook.
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -309,9 +312,9 @@ export default function Home() {
       </div>
 
       
-{/* <div id="platform">
-  <PlatformSection />
-</div> */}
+      {/* <div id="platform"> // Manter comentado se não for usar a seção PlatformSection
+        <PlatformSection />
+      </div> */}
 
       <div className="clients-slider">
         <ClientsSlider />
